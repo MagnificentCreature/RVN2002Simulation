@@ -47,11 +47,19 @@
     justify-content: space-around;
     flex-wrap: wrap;
 }
-
 .animal-section {
     width: 23%;
-	margin: 0.5%;
-	border: 1px solid black;
+    margin: 0.5%;
+    border: 1px solid black;
+}
+.conservationist-section {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 </style>
 </head>
@@ -63,8 +71,10 @@
 <div class="animal-container">
   <div class="animal-section" id="tigers-section">
     <h2>Tigers</h2>
-    <div id="animalTigerPopulation">Tiger Population: 1000</div>
-    <div id="tigerValue">Tiger Coat Value: $100M</div>
+    <div id="tigerPopulation">Tiger Population: 1000</div>
+    <label for="tigerValue">Tiger Produce Value: </label>
+      <input type="number" id="tigerValue" value="100">
+    <label for="tigerValue">M</label>
     <h3>Animal Variables</h3>
     <table>
       <tr>
@@ -73,32 +83,34 @@
       </tr>
       <tr>
         <td>Young Population</td>
-        <td><input type="number" id="youngPopulation" value="500"></td>
+        <td><input type="number" id="youngPopulation1" value="500"></td>
       </tr>
       <tr>
         <td>Adult Population</td>
-        <td><input type="number" id="adultPopulation" value="500"></td>
+        <td><input type="number" id="adultPopulation1" value="500"></td>
       </tr>
       <tr>
         <td>Maturity Rate (%)</td>
-        <td><input type="number" id="maturityRate" value="10"></td>
+        <td><input type="number" id="maturityRate1" value="10"></td>
       </tr>
       <tr>
         <td>Survival Rate (%)</td>
-        <td><input type="number" id="survivalRate" value="90"></td>
+        <td><input type="number" id="survivalRate1" value="90"></td>
       </tr>
       <tr>
         <td>Fertility Rate</td>
-        <td><input type="number" id="fertilityRate" value="2"></td>
+        <td><input type="number" id="fertilityRate1" value="2"></td>
       </tr>
     </table>
-    <button onclick="calculateNextBatch('youngPopulation', 'adultPopulation', 'maturityRate', 'survivalRate', 'fertilityRate')">Calculate Next Batch</button>
-    <div id="animalResult"></div>
+    <button onclick="calculateNextBatch('tigerPopulation', 'youngPopulation1', 'adultPopulation1', 'maturityRate1', 'survivalRate1', 'fertilityRate1', 'tigerResult')">Calculate Next Batch</button>
+    <div id="tigerResult"></div>
   </div>
   <div class="animal-section" id="animal2-section">
     <h2>animal2</h2>
     <div id="animal2Population">animal2 Population: 1000</div>
-    <div id="animal2Value">animal2 Value: $100M</div>
+    <label for="animal2Value">animal2 Produce Value: </label>
+      <input type="number" id="animal2Value" value="100">
+    <label for="animal2Value">M</label>
     <h3>Animal Variables</h3>
     <table>
       <tr>
@@ -126,12 +138,15 @@
         <td><input type="number" id="fertilityRate2" value="2"></td>
       </tr>
     </table>
-    <button onclick="calculateNextBatch('youngPopulation2', 'adultPopulation2', 'maturityRate2', 'survivalRate2', 'fertilityRate2')">Calculate Next Batch</button>
+    <button onclick="calculateNextBatch('animal2Population', 'youngPopulation2', 'adultPopulation2', 'maturityRate2', 'survivalRate2', 'fertilityRate2', 'animal2Result')">Calculate Next Batch</button>
+    <div id="animal2Result"></div>
   </div>
   <div class="animal-section" id="animal3-section">
     <h2>animal3</h2>
     <div id="animal3Population">animal3 Population: 1000</div>
-    <div id="animal3Value">animal3 Value: $100M</div>
+    <label for="animal3Value">animal3 Produce Value: </label>
+      <input type="number" id="animal3Value" value="100">
+    <label for="animal3Value">M</label>    
     <h3>Animal Variables</h3>
     <table>
       <tr>
@@ -159,12 +174,15 @@
         <td><input type="number" id="fertilityRate3" value="2"></td>
       </tr>
     </table>
-    <button onclick="calculateNextBatch('youngPopulation3', 'adultPopulation3', 'maturityRate3', 'survivalRate3', 'fertilityRate3')">Calculate Next Batch</button>
+    <button onclick="calculateNextBatch('animal3Population', 'youngPopulation3', 'adultPopulation3', 'maturityRate3', 'survivalRate3', 'fertilityRate3','animal3Result')">Calculate Next Batch</button>
+    <div id="animal3Result"></div>
   </div>
   <div class="animal-section" id="animal4-section">
     <h2>animal4</h2>
     <div id="animal4Population">animal4 Population: 1000</div>
-    <div id="animal4Value">animal4 Value: $100M</div>
+    <label for="animal4Value">animal4 Produce Value: </label>
+      <input type="number" id="animal4Value" value="100">
+    <label for="animal4Value">M</label>    
     <h3>Animal Variables</h3>
     <table>
       <tr>
@@ -192,21 +210,19 @@
         <td><input type="number" id="fertilityRate4" value="2"></td>
       </tr>
     </table>
-    <button onclick="calculateNextBatch('youngPopulation4', 'adultPopulation4', 'maturityRate4', 'survivalRate4', 'fertilityRate4')">Calculate Next Batch</button>
+    <button onclick="calculateNextBatch('animal4Population', 'youngPopulation4', 'adultPopulation4', 'maturityRate4', 'survivalRate4', 'fertilityRate4','animal4Result')">Calculate Next Batch</button>
+    <div id="animal4Result"></div>
   </div>
 </div>
 
 <!-- Poachers Section -->
 <div class="poacher-section" ondragover="allowDrop(event)" ondrop="drop(event)">
   <div class="poacher-content">
-    <h2>Poachers</h2>
+    <h2 style="text-align: center;">Poachers</h2>
     <div class="money-text" id="poacherMoney">Money: $1000M</div>
-    <div class="population-text" id="poacherTigerPopulation">Tiger Population: 100</div>
-    <label for="poacherTigerValue">Tiger Value: </label>
-    <input type="number" id="poacherTigerValue" value="100">
-    <label for="poacherTigerValue">M</label>
     <h3>Hunt Action</h3>
-    <h4> Revenue is roughly calculated by having a larger Dice Result against the Critical Roll. (Tiger's Population also affects the result)</h4>
+    <h4> Revenue is roughly calculated by having a larger Dice Result against the Critical Roll.<br>
+      (The Animal's Population also affects the result)</h4>
     <label for="criticalRoll">Critical Roll:</label>
     <input type="number" id="criticalRoll" value="5">
     <br>
@@ -218,19 +234,36 @@
     <label for="moneyInvested">Money Invested:</label>
     <input type="number" id="moneyInvested" min="0">
     <br>
+    <label for="animalSelect">Select an animal to hunt: </label>
+    <select id="animalSelect">
+      <option value="tiger">tiger</option>
+      <option value="animal2">animal2</option>
+      <option value="animal3">animal3</option>
+      <option value="animal4">animal4</option>
+    </select>
     <br>
     <button onclick="hunt()">Go Hunting</button>
     <br>
     <br>
     <div id="huntResult"></div>
   </div>
-  <div class="image-container"> <img src="../Money_Bag_Transparent_Clip_Art_Image.png" class="money-bag" draggable="true" ondragstart="dragStart(event)" width="139.40" height="160.00" alt=""/> </div>
+  <div class="image-container"> <img src="Money_Bag_Transparent_Clip_Art_Image.png" class="money-bag" draggable="true" ondragstart="dragStart(event)" width="139.40" height="160.00" alt=""/> </div>
 </div>
 
 <!-- Conservationists Section -->
-<div class="section">
+<div class="conservationist-section">
   <h2>Conservationists</h2>
-  <!-- Conservationist-specific content will go here --> 
+  <label for="conservationalistFunds">Funds: </label>
+  <input type="number" id="conservationalistFunds" value="100">
+  <label for="conservationalistFunds"></label>
+  <br>
+  <br>
+  <label for="publicAwareness">Public Support (Arbitrary Value): </label>
+  <input type="number" id="publicAwareness"  value="50">
+  <br>
+  <br>
+  <button onclick="raiseFunds()">Raise Funds</button>
+  <br>
 </div>
 <script>
         // Initialize poacher money and tiger population
@@ -240,9 +273,7 @@
 
         function updatePoacherMoney() {
             document.getElementById('poacherMoney').innerHTML = "Money: $" + poacherMoney + "M";
-            document.getElementById('poacherTigerPopulation').innerHTML = "Tiger Population: " + tigerPopulation;
-            document.getElementById('poacherTigerValue').innerHTML = "Tiger Value: $" + tigerPrice + "M";
-            document.getElementById('tigerValue').innerHTML = "Black Market value of a Tiger: $" + tigerPrice + "M";
+            // document.getElementById('poacherTigerPopulation').innerHTML = "Tiger Population: " + tigerPopulation;
         }
 
         function hunt() {
@@ -254,27 +285,37 @@
 
             var criticalRoll = parseFloat(document.getElementById('criticalRoll').value);
             var diceResult = parseFloat(document.getElementById('diceResult').value);
-            var tigersKilled = 0;
+            var animalsKilled = 0;
             var moneyChange = 0;
             var huntingSuccessRate = 0;
             var precentageMoneyLost = 0;
 
+            //get targetPopulation based on animalSelect
+            var animalSelect = document.getElementById('animalSelect');
+            var animalIndex = animalSelect.selectedIndex + 1;
+            var selectedOption = animalSelect.options[animalIndex - 1].value;
+            var targetAdultPopulationString = "adultPopulation" + animalIndex;
+            var targetAdultPopulation = parseFloat(document.getElementById(targetAdultPopulationString).value);
+            var targetYoungPopulation = parseFloat(document.getElementById("youngPopulation"+animalIndex).value);
+            var targetPrice = parseFloat(document.getElementById(selectedOption+"Value").value);
+            var targetFertility = parseFloat(document.getElementById("fertilityRate"+animalIndex).value);
+
             if (diceResult >= criticalRoll) {
                 // The new equation for huntingSuccessRate
-                huntingSuccessRate = 0.02 + 0.35 * Math.pow((diceResult - criticalRoll + 4.2) / 18, 1.66);
+                huntingSuccessRate = 0.02 + 0.15 * Math.pow((diceResult - criticalRoll + 4.2) / 18, 1.66);
 
                 // Apply a concave function influenced by the money spent
                 var moneyEffect = Math.min(moneyInvested, 10000) / 10000;
                 huntingSuccessRate = huntingSuccessRate + (0.51 - huntingSuccessRate) * Math.pow(moneyEffect, 0.5);
 
                 // Number of tigers killed is now based on the percentage of the tiger population
-                tigersKilled = Math.round(huntingSuccessRate * tigerPopulation);
+                animalsKilled = Math.round(huntingSuccessRate * targetAdultPopulation);
 
                 // Update poacher money and tiger population
-                moneyChange = tigersKilled * tigerPrice;
+                moneyChange = Math.round(animalsKilled * targetPrice);
             } else {
                 // No tigers are killed if diceResult < criticalRoll
-                tigersKilled = 0;
+                animalsKilled = 0;
                 // Losses incurred between 0.2 to 0.9 depending on how much lower the roll is
                 precentageMoneyLost = (0.9 - 0.7 * (criticalRoll - diceResult) / (criticalRoll - 1));
                 if (diceResult === 1) {
@@ -285,62 +326,44 @@
             }
 
             poacherMoney += moneyChange;
-            tigerPopulation -= tigersKilled;
+            youngKilled = Math.round(animalsKilled * 0.6 * targetFertility);
             updatePoacherMoney();
 
-            document.getElementById('huntResult').innerText = "Tigers Killed: " + tigersKilled + ", Money Change: $" + moneyChange + "M";
+            document.getElementById('huntResult').innerText = selectedOption + " killed: " + animalsKilled + ".\nYoung died: " + youngKilled + ".\nMoney Change: $" + moneyChange + "M.";
+
+            updateAnimalValues("youngPopulation"+animalIndex, "adultPopulation"+animalIndex, selectedOption+"Result", selectedOption+"Population", targetYoungPopulation - youngKilled, targetAdultPopulation - animalsKilled);
         }
 		
-		function calculateNextBatch(youngPopID, adultPopID, matureRateID, survivalRateID, fertilityRateID) {
+		function calculateNextBatch(totalPopulation, youngPopID, adultPopID, matureRateID, survivalRateID, fertilityRateID, resultID) {
 			// Get values from input fields
 			youngPopulation = parseFloat(document.getElementById(youngPopID).value);
 			adultPopulation = parseFloat(document.getElementById(adultPopID).value);
 			maturityRate = parseFloat(document.getElementById(matureRateID).value);
 			survivalRate = parseFloat(document.getElementById(survivalRateID).value);
-			fertilityRate = parseFloat(document.getElementById(fertilityRateID).value);
+      fertilityRate = parseFloat(document.getElementById(fertilityRateID).value);
 
 			// Calculate next batch
 			var newAdults = youngPopulation * (maturityRate / 100);
+			var newYoung = adultPopulation * fertilityRate;
 			var survivingAdults = adultPopulation * (survivalRate / 100);
 			var survivingYoung = youngPopulation * (survivalRate / 100);
-			var newYoung = adultPopulation * fertilityRate;
 
-			youngPopulation = survivingYoung + newYoung;
-			adultPopulation = survivingAdults + newAdults;
-			tigerPopulation = youngPopulation + adultPopulation;
+      youngPopulation = Math.floor(survivingYoung + newYoung - newAdults);
+      adultPopulation = Math.floor(survivingAdults + newAdults);
+      tigerPopulation = Math.floor(youngPopulation + adultPopulation);
 
 			// Update display values
-			document.getElementById(youngPopID).value = youngPopulation;
-			document.getElementById(adultPopID).value = adultPopulation;
-			document.getElementById('animalResult').innerHTML = "New Young Population: " + youngPopulation + ", New Adult Population: " + adultPopulation;
+      updateAnimalValues(youngPopID, adultPopID, resultID, totalPopulation, youngPopulation, adultPopulation);
 			updatePoacherMoney();  // to update the tiger population displayed in the Poachers section
 		}
-		
-		
-//		function calculateNextBatch(youngPopID, adultPopID, matureRateID, survivalRateID, fertilityRateID) {
-//			// Get values from input fields
-//			youngPopulation = parseFloat(document.getElementById('youngPopulation').value);
-//			adultPopulation = parseFloat(document.getElementById('adultPopulation').value);
-//			maturityRate = parseFloat(document.getElementById('maturityRate').value);
-//			survivalRate = parseFloat(document.getElementById('survivalRate').value);
-//			fertilityRate = parseFloat(document.getElementById('fertilityRate').value);
-//
-//			// Calculate next batch
-//			var newAdults = youngPopulation * (maturityRate / 100);
-//			var survivingAdults = adultPopulation * (survivalRate / 100);
-//			var survivingYoung = youngPopulation * (survivalRate / 100);
-//			var newYoung = adultPopulation * fertilityRate;
-//
-//			youngPopulation = survivingYoung + newYoung;
-//			adultPopulation = survivingAdults + newAdults;
-//			tigerPopulation = youngPopulation + adultPopulation;
-//
-//			// Update display values
-//			document.getElementById('youngPopulation').value = youngPopulation;
-//			document.getElementById('adultPopulation').value = adultPopulation;
-//			document.getElementById('animalResult').innerHTML = "New Young Population: " + youngPopulation + ", New Adult Population: " + adultPopulation;
-//			updatePoacherMoney();  // to update the tiger population displayed in the Poachers section
-//		}
+
+    function updateAnimalValues(youngPopID, adultPopID, resultID, totalPopulation, youngPopulation, adultPopulation) {
+      document.getElementById(youngPopID).value = youngPopulation;
+			document.getElementById(adultPopID).value = adultPopulation;
+			document.getElementById(resultID).innerHTML = "New Adult Population: " + adultPopulation + ",\nNew Young Population: " + youngPopulation;
+      var oldTotalPopulation = document.getElementById(totalPopulation).innerText.split(" ").splice(0, 2);
+      document.getElementById(totalPopulation).innerHTML = oldTotalPopulation.join(" ") + " " + (youngPopulation + adultPopulation);
+    }
 		
 		function dragStart(event) {
 			console.log("Drag started");
@@ -363,7 +386,7 @@
 			const y = event.clientY - rect.top;
 			const newBag = document.createElement('img');
 			console.log("newBag:", newBag);  // Debug log
-			newBag.src = '../Money_Bag_Transparent_Clip_Art_Image.png';
+			newBag.src = 'Money_Bag_Transparent_Clip_Art_Image.png';
 			newBag.className = 'money-bag';
 			newBag.width = 69.7;
 			newBag.height = 80;
@@ -377,6 +400,17 @@
 			});
 
 			dropTarget.appendChild(newBag);
+		}
+	
+		function raiseFunds() {
+			const funds = parseFloat(document.getElementById('conservationalistFunds').value);
+			const publicAwareness = parseFloat(document.getElementById('publicAwareness').value);
+
+			// Your logic here to calculate new funds based on critical roll and public awareness
+      		newFunds = funds + publicAwareness;
+
+			// Update the fundResult div with the result
+			document.getElementById('conservationalistFunds').value = newFunds;
 		}
     </script>
 </body>
