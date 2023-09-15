@@ -106,12 +106,12 @@
     <button onclick="calculateNextBatch('tigerPopulation', 'youngPopulation1', 'adultPopulation1', 'maturityRate1', 'survivalRate1', 'fertilityRate1', 'tigerResult')">Calculate Next Batch</button>
     <div id="tigerResult"></div>
   </div>
-  <div class="animal-section" id="animal2-section">
+  <div class="animal-section" id="slow lorises-section">
     <h2>Slow Lorises</h2>
-    <div id="animal2Population">Slow Lorises Population: 1000</div>
-    <label for="animal2Value">Slow Lorises Produce Value: </label>
-      <input type="number" id="animal2Value" value="100">
-    <label for="animal2Value">M</label>
+    <div id="slow lorisesPopulation">Slow Lorises Population: 1000</div>
+    <label for="slow lorisesValue">Slow Lorises Produce Value: </label>
+      <input type="number" id="slow lorisesValue" value="100">
+    <label for="slow lorisesValue">M</label>
     <h3>Animal Variables</h3>
     <table>
       <tr>
@@ -139,15 +139,15 @@
         <td><input type="number" id="fertilityRate2" value="2"></td>
       </tr>
     </table>
-    <button onclick="calculateNextBatch('animal2Population', 'youngPopulation2', 'adultPopulation2', 'maturityRate2', 'survivalRate2', 'fertilityRate2', 'animal2Result')">Calculate Next Batch</button>
-    <div id="animal2Result"></div>
+    <button onclick="calculateNextBatch('slow lorisesPopulation', 'youngPopulation2', 'adultPopulation2', 'maturityRate2', 'survivalRate2', 'fertilityRate2', 'slow lorisesResult')">Calculate Next Batch</button>
+    <div id="slow lorisesResult"></div>
   </div>
-  <div class="animal-section" id="animal3-section">
+  <div class="animal-section" id="bulbul-section">
     <h2>Bulbul</h2>
-    <div id="animal3Population">Bulbul Population: 1000</div>
-    <label for="animal3Value">Bulbul Produce Value: </label>
-      <input type="number" id="animal3Value" value="100">
-    <label for="animal3Value">M</label>    
+    <div id="bulbulPopulation">Bulbul Population: 1000</div>
+    <label for="bulbulValue">Bulbul Produce Value: </label>
+      <input type="number" id="bulbulValue" value="100">
+    <label for="bulbulValue">M</label>    
     <h3>Animal Variables</h3>
     <table>
       <tr>
@@ -175,15 +175,15 @@
         <td><input type="number" id="fertilityRate3" value="2"></td>
       </tr>
     </table>
-    <button onclick="calculateNextBatch('animal3Population', 'youngPopulation3', 'adultPopulation3', 'maturityRate3', 'survivalRate3', 'fertilityRate3','animal3Result')">Calculate Next Batch</button>
-    <div id="animal3Result"></div>
+    <button onclick="calculateNextBatch('bulbulPopulation', 'youngPopulation3', 'adultPopulation3', 'maturityRate3', 'survivalRate3', 'fertilityRate3','bulbulResult')">Calculate Next Batch</button>
+    <div id="bulbulResult"></div>
   </div>
-  <div class="animal-section" id="animal4-section">
+  <div class="animal-section" id="sambar deer-section">
     <h2>Sambar Deer</h2>
-    <div id="animal4Population">Sambar Deer Population: 1000</div>
-    <label for="animal4Value">Sambar Deer Produce Value: </label>
-      <input type="number" id="animal4Value" value="100">
-    <label for="animal4Value">M</label>    
+    <div id="sambar deerPopulation">Sambar Deer Population: 1000</div>
+    <label for="sambar deerValue">Sambar Deer Produce Value: </label>
+      <input type="number" id="sambar deerValue" value="100">
+    <label for="sambar deerValue">M</label>    
     <h3>Animal Variables</h3>
     <table>
       <tr>
@@ -211,8 +211,8 @@
         <td><input type="number" id="fertilityRate4" value="2"></td>
       </tr>
     </table>
-    <button onclick="calculateNextBatch('animal4Population', 'youngPopulation4', 'adultPopulation4', 'maturityRate4', 'survivalRate4', 'fertilityRate4','animal4Result')">Calculate Next Batch</button>
-    <div id="animal4Result"></div>
+    <button onclick="calculateNextBatch('sambar deerPopulation', 'youngPopulation4', 'adultPopulation4', 'maturityRate4', 'survivalRate4', 'fertilityRate4','sambar deerResult')">Calculate Next Batch</button>
+    <div id="sambar deerResult"></div>
   </div>
 </div>
 
@@ -238,9 +238,9 @@
     <label for="animalSelect">Select an animal to hunt: </label>
     <select id="animalSelect">
       <option value="tiger">tiger</option>
-      <option value="animal2">animal2</option>
-      <option value="animal3">animal3</option>
-      <option value="animal4">animal4</option>
+      <option value="slow lorises">slow lorises</option>
+      <option value="bulbul">bulbul</option>
+      <option value="sambar deer">sambar deer</option>
     </select>
     <br>
     <button onclick="hunt()">Go Hunting</button>
