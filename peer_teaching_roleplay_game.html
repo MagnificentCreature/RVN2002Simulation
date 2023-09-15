@@ -345,7 +345,7 @@
 
 			// Calculate next batch
 			var newAdults = youngPopulation * (maturityRate / 100);
-			var newYoung = adultPopulation * fertilityRate;
+			var newYoung = Math.round(adultPopulation * fertilityRate / 2);
 			var survivingAdults = adultPopulation * (survivalRate / 100);
 			var survivingYoung = youngPopulation * (survivalRate / 100);
 
